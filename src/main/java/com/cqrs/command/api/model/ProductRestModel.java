@@ -13,4 +13,5 @@ public class ProductRestModel {
     private BigDecimal price;
     private Integer quantity;
 
+
 }
