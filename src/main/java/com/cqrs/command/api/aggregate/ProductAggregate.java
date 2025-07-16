@@ -2,6 +2,8 @@ package com.cqrs.command.api.aggregate;
 
 import com.cqrs.command.api.commands.CreateProductCommand;
 import com.cqrs.command.api.events.ProductCreatedEvent;
+import org.axonframework.commandhandling.CommandHandler;
+import org.axonframework.eventsourcing.EventSourcingHandler;
 import org.axonframework.modelling.command.AggregateIdentifier;
 import org.axonframework.modelling.command.AggregateLifecycle;
 import org.axonframework.spring.stereotype.Aggregate;
@@ -18,6 +20,7 @@ public class ProductAggregate {
     private BigDecimal price;
     private Integer quantity;
 
+    @CommandHandler
     public ProductAggregate(CreateProductCommand createProductCommand) {
         //You can perform all the validation here
         ProductCreatedEvent productCreatedEvent = new ProductCreatedEvent();
@@ -31,6 +34,7 @@ public class ProductAggregate {
     public ProductAggregate() {
     }
 
+    @EventSourcingHandler
     public void on(ProductCreatedEvent productCreatedEvent){
         this.name = productCreatedEvent.getName();
         this.productId = productCreatedEvent.getProductId();
