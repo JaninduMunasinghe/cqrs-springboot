@@ -86,7 +86,7 @@ janindumunasinghe-cqrs-springboot/
 
 ```bash
 # Clone the repository
-git clone https://github.com/<your-username>/janindumunasinghe-cqrs-springboot.git
+git clone https://github.com/JaninduMunasinghe/janindumunasinghe-cqrs-springboot.git
 cd janindumunasinghe-cqrs-springboot
 
 # Build the project
